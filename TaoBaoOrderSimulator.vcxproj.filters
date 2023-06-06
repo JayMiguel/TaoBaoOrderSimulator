@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{353181e8-c8a3-4fb2-b633-1373f8381fcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui">
+      <UniqueIdentifier>{76b0dce2-746f-41a8-b99e-2ce0e8ff2ba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\dialog">
+      <UniqueIdentifier>{af4f1eaa-8c33-4eff-b449-3f24e8e1d9e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\component">
+      <UniqueIdentifier>{d39137d1-3559-4852-b69d-8d696b5c48b6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ui\component\COrderWidget.cpp">
+      <Filter>src\ui\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\component\CRedPackWidget.cpp">
+      <Filter>src\ui\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\component\CDetailWidget.cpp">
+      <Filter>src\ui\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\dialog\CRedPackDlg.cpp">
+      <Filter>src\ui\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\SimulatorWindow.cpp">
+      <Filter>src\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\ui\component\CRedPackWidget.h">
+      <Filter>src\ui\component</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\component\CDetailWidget.h">
+      <Filter>src\ui\component</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\component\COrderWidget.h">
+      <Filter>src\ui\component</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\dialog\CRedPackDlg.h">
+      <Filter>src\ui\dialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\SimulatorWindow.h">
+      <Filter>src\ui</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>
