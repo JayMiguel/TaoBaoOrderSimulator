@@ -5,8 +5,9 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QDoubleValidator>
-#include <QPushButton>
 #include <QMessageBox>
+
+#include <CPushButton.h>
 
 class CRedPackDlg : public QDialog
 {
@@ -28,6 +29,6 @@ private:
 	QHBoxLayout* m_layout;
 	QLabel* m_label;
 	QLineEdit* m_valueLine;
-	QPushButton* m_okBtn;
+	CPushButton* m_okBtn;
 };
 

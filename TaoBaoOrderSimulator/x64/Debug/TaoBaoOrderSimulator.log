@@ -1,0 +1,21 @@
+﻿D:\develop\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(502,5): warning MSB8004: Intermediate 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Intermediate 目录。
+D:\develop\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  rcc Resource.qrc
+  CPushButton.cpp
+  CRedPackDlg.cpp
+  CDetailWidget.cpp
+  COrderWidget.cpp
+  CRedPackWidget.cpp
+  main.cpp
+  SimulatorWindow.cpp
+D:\project\TaoBaoOrderSimulator\TaoBaoOrderSimulator\Src\ui\common\CPushButton.cpp(6,10): warning C4189: “imageLabel”: 局部变量已初始化但不引用
+D:\project\TaoBaoOrderSimulator\TaoBaoOrderSimulator\Src\ui\common\CPushButton.cpp(7,10): warning C4189: “textLabel”: 局部变量已初始化但不引用
+D:\project\TaoBaoOrderSimulator\TaoBaoOrderSimulator\Src\ui\common\CPushButton.cpp(30,43): warning C4100: “event”: 未引用的形参
+  moc_SimulatorWindow.cpp
+  moc_CDetailWidget.cpp
+  moc_CRedPackWidget.cpp
+  moc_COrderWidget.cpp
+  moc_CRedPackDlg.cpp
+  moc_CPushButton.cpp
+  qrc_Resource.cpp
+  TaoBaoOrderSimulator.vcxproj -> D:\project\TaoBaoOrderSimulator\x64\Debug\TaoBaoOrderSimulator.exe

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QGridLayout>
+#include <QSplitter>
 
 #include "CDetailWidget.h"
 #include "CRedPackWidget.h"
@@ -16,8 +17,8 @@ public:
     ~SimulatorWindow();
 
 private:
-    QWidget* m_centralWidget;
-    QGridLayout* m_layout;
+    QSplitter* m_splitter;
+
     CDetailWidget* m_detail;
     CRedPackWidget* m_redPack;
     COrderWidget* m_order;
