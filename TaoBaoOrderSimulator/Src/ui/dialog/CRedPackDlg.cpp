@@ -2,24 +2,23 @@
 
 CRedPackDlg::CRedPackDlg(QWidget* parent) : QDialog(parent)
 {
-	setWindowTitle(tr("新增红包"));
-	setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-	setFixedSize(400, 300);
+	this->setWindowTitle(tr("新增红包"));
+	this->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+	this->setFixedSize(400, 300);
+
 	m_label = new QLabel(tr("红包总额："));
+	m_label->setStyleSheet("QLabel { background-color: none; }");
 
-	m_valueLine = new QLineEdit(this);
-	QDoubleValidator* validator = new QDoubleValidator(this);
-	m_valueLine->setValidator(validator);
+	m_valueLine = new CLineEdit(this);
 
-	m_okBtn = new CPushButton(":/Resources/duck.png", tr("确定"), this);
+	m_okBtn = new CPushButton(":/Resources/Duck.png", tr("确定"), this);
 
 	m_layout = new QHBoxLayout(this);
 	m_layout->addWidget(m_label);
 	m_layout->addWidget(m_valueLine);
 	m_layout->addWidget(m_okBtn);
-	m_layout->setAlignment(m_okBtn, Qt::AlignCenter);
 
-	//connect(m_okBtn, SIGNAL(clicked()), this, SLOT(onBtnClicked()));
+	connect(m_okBtn, &CPushButton::clicked, this, &CRedPackDlg::onBtnClicked);
 }
 
 CRedPackDlg::~CRedPackDlg()
@@ -37,7 +36,7 @@ void CRedPackDlg::onBtnClicked()
 {
 	if (m_valueLine->text().isEmpty())
 	{
-		QMessageBox::warning(this, tr("提示"), tr("请输入红包金额"));
+		QMessageBox::question(this, tr("提示"), tr("请输入红包金额"));
 		return;
 	}
 

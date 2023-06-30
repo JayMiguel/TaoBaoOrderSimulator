@@ -2,6 +2,8 @@
 
 CDetailWidget::CDetailWidget(QWidget* parent) : QWidget(parent)
 {
+	this->setStyleSheet("background-color: rgba(255, 255, 255, 0.7);");
+
 	// ¶©µ¥ÏêÇé
 	m_model = new QStandardItemModel(this);
 	m_model->setColumnCount(2);

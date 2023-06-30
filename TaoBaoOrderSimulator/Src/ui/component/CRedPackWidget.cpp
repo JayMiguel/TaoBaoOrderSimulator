@@ -2,22 +2,25 @@
 
 CRedPackWidget::CRedPackWidget(QWidget* parent) : QWidget(parent)
 {
+	this->setStyleSheet("background-color: rgba(255, 255, 255, 0.7);");
+
 	// 订单详情
 	m_model = new QStandardItemModel(this);
-	m_model->setColumnCount(2);
-	m_model->setHorizontalHeaderItem(0, new QStandardItem(tr("原始金额")));
-	m_model->setHorizontalHeaderItem(1, new QStandardItem(tr("剩余金额")));
+	m_model->setColumnCount(3);
+	m_model->setHorizontalHeaderItem(0, new QStandardItem(tr("序号")));
+	m_model->setHorizontalHeaderItem(1, new QStandardItem(tr("原始金额")));
+	m_model->setHorizontalHeaderItem(2, new QStandardItem(tr("剩余金额")));
 
 	m_table = new QTableView(this);
 	m_table->setModel(m_model);
 	m_table->setSelectionBehavior(QAbstractItemView::SelectRows);
 	m_table->setSelectionMode(QAbstractItemView::MultiSelection);
-	m_table->verticalHeader()->setMinimumWidth(30);
-	m_table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch); // 该列自动调整宽度
+	m_table->verticalHeader()->hide();
 	m_table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch); // 该列自动调整宽度
+	m_table->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch); // 该列自动调整宽度
 
-	m_addBtn = new QPushButton(tr("新增红包"), this);
-	m_removeBtn = new QPushButton(tr("删除红包"), this);
+	m_addBtn = new RoundButton(tr("新增红包"), this);
+	m_removeBtn = new RoundButton(tr("删除红包"), this);
 	
 	QHBoxLayout* m_btnLayout = new QHBoxLayout;
 	m_btnLayout->addWidget(m_addBtn);
@@ -27,13 +30,13 @@ CRedPackWidget::CRedPackWidget(QWidget* parent) : QWidget(parent)
 	m_layout->addLayout(m_btnLayout);
 	m_layout->addWidget(m_table);
 
-	m_dlg = new CRedPackDlg(this);
-	m_dlg->close();
+	m_dialog = new CRedPackDlg(this);
+	m_dialog->close();
 
 	/////////////////////////////////////////////////////////
 	connect(m_addBtn, SIGNAL(clicked()), this, SLOT(onAddClicked()));
 	connect(m_removeBtn, SIGNAL(clicked()), this, SLOT(onRemoveClicked()));
-	connect(m_dlg, SIGNAL(addRedPack(const double)), this, SLOT(onAddRedPack(const double)));
+	connect(m_dialog, SIGNAL(addRedPack(const double)), this, SLOT(onAddRedPack(const double)));
 }
 
 CRedPackWidget::~CRedPackWidget()
@@ -43,11 +46,12 @@ CRedPackWidget::~CRedPackWidget()
 
 void CRedPackWidget::onAddClicked()
 {
-	m_dlg->exec();
+	m_dialog->exec();
 }
 
 void CRedPackWidget::onRemoveClicked()
 {
+	// 获取所有选中项
 	QModelIndexList indexList = m_table->selectionModel()->selectedIndexes();
 	if (indexList.isEmpty())
 	{
@@ -60,37 +64,45 @@ void CRedPackWidget::onRemoveClicked()
 		return;
 	}
 
-	QList<int> rows;
+	// 获取所有行号
+	QVector<int> rows;
 	for (QModelIndex& index : indexList)
 	{
 		if (!rows.contains(index.row()))
 		{
-			rows.append(index.row());
+			rows.push_back(index.row());
 		}
 	}
 	
-	for (const int& row : rows)
+	// 升序排序
+	qSort(rows);
+
+	// 删除红包
+	for (auto iter = rows.rbegin() ; iter != rows.rend(); iter++)
 	{
-		if (m_model->removeRow(row))
+		// 从表格中移除
+		if (m_model->removeRow(*iter))
 		{
-			m_vRedPack.removeAt(row);
+			// 从容器中移除
+			vecRedPack.removeAt(*iter);
 		}
+	}
+
+	// 重新设定序号
+	for (int i = 0; i < m_model->rowCount(); i++)
+	{
+		m_model->item(i, 0)->setData(i + 1, Qt::DisplayRole);
 	}
 }
 
-void CRedPackWidget::onAddRedPack(const double money)
+void CRedPackWidget::onAddRedPack(double money)
 {
-	m_model->appendRow({ new QStandardItem(QString::number(money)), new QStandardItem(QString::number(money)) });
-	m_vRedPack.push_back(std::make_shared<RedPack>(money));
-}
+	RedPack* redPack = new RedPack(money);
+	redPack->m_itemNum = new QStandardItem(QString::number(m_model->rowCount() + 1));
+	redPack->m_itemTotal = new QStandardItem(QString::number(redPack->m_total));
+	redPack->m_itemSurplus = new QStandardItem(QString::number(redPack->m_surplus));
 
-//////////////////////////////////////////////////////////////////////
-RedPack::RedPack(const double& money) : max(money), surplus(0.0)
-{
-
-}
-
-RedPack::~RedPack()
-{
-
+	m_model->appendRow({ redPack->m_itemNum, redPack->m_itemTotal, redPack->m_itemSurplus });
+	vecRedPack.push_back(redPack);
+	m_dialog->close();
 }

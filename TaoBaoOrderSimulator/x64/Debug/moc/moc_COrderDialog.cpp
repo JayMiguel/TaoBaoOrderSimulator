@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'CRedPackDlg.h'
+** Meta object code from reading C++ file 'COrderDialog.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.14.2)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../src/ui/dialog/CRedPackDlg.h"
+#include "../../../Src/ui/dialog/COrderDialog.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'CRedPackDlg.h' doesn't include <QObject>."
+#error "The header file 'COrderDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.14.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,29 +21,31 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_CRedPackDlg_t {
-    QByteArrayData data[5];
-    char stringdata0[42];
+struct qt_meta_stringdata_COrderDialog_t {
+    QByteArrayData data[6];
+    char stringdata0[47];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_CRedPackDlg_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_COrderDialog_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_CRedPackDlg_t qt_meta_stringdata_CRedPackDlg = {
+static const qt_meta_stringdata_COrderDialog_t qt_meta_stringdata_COrderDialog = {
     {
-QT_MOC_LITERAL(0, 0, 11), // "CRedPackDlg"
-QT_MOC_LITERAL(1, 12, 10), // "addRedPack"
-QT_MOC_LITERAL(2, 23, 0), // ""
-QT_MOC_LITERAL(3, 24, 4), // "exec"
-QT_MOC_LITERAL(4, 29, 12) // "onBtnClicked"
+QT_MOC_LITERAL(0, 0, 12), // "COrderDialog"
+QT_MOC_LITERAL(1, 13, 8), // "addOrder"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 5), // "total"
+QT_MOC_LITERAL(4, 29, 4), // "exec"
+QT_MOC_LITERAL(5, 34, 12) // "onBtnClicked"
 
     },
-    "CRedPackDlg\0addRedPack\0\0exec\0onBtnClicked"
+    "COrderDialog\0addOrder\0\0total\0exec\0"
+    "onBtnClicked"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_CRedPackDlg[] = {
+static const uint qt_meta_data_COrderDialog[] = {
 
  // content:
        8,       // revision
@@ -60,11 +62,11 @@ static const uint qt_meta_data_CRedPackDlg[] = {
        1,    1,   29,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   32,    2, 0x0a /* Public */,
-       4,    0,   33,    2, 0x08 /* Private */,
+       4,    0,   32,    2, 0x0a /* Public */,
+       5,    0,   33,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Double,    2,
+    QMetaType::Void, QMetaType::Double,    3,
 
  // slots: parameters
     QMetaType::Int,
@@ -73,13 +75,13 @@ static const uint qt_meta_data_CRedPackDlg[] = {
        0        // eod
 };
 
-void CRedPackDlg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void COrderDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<CRedPackDlg *>(_o);
+        auto *_t = static_cast<COrderDialog *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->addRedPack((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 0: _t->addOrder((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 1: { int _r = _t->exec();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
         case 2: _t->onBtnClicked(); break;
@@ -88,8 +90,8 @@ void CRedPackDlg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (CRedPackDlg::*)(const double );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&CRedPackDlg::addRedPack)) {
+            using _t = void (COrderDialog::*)(double );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&COrderDialog::addOrder)) {
                 *result = 0;
                 return;
             }
@@ -97,30 +99,30 @@ void CRedPackDlg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject CRedPackDlg::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject COrderDialog::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_CRedPackDlg.data,
-    qt_meta_data_CRedPackDlg,
+    qt_meta_stringdata_COrderDialog.data,
+    qt_meta_data_COrderDialog,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *CRedPackDlg::metaObject() const
+const QMetaObject *COrderDialog::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *CRedPackDlg::qt_metacast(const char *_clname)
+void *COrderDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CRedPackDlg.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_COrderDialog.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int CRedPackDlg::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int COrderDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -138,7 +140,7 @@ int CRedPackDlg::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void CRedPackDlg::addRedPack(const double _t1)
+void COrderDialog::addOrder(double _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

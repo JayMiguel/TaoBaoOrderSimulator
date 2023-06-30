@@ -9,21 +9,10 @@
 #include <QHeaderView>
 #include <QStandardItem>
 #include <QStandardItemModel>
-#include <QPushButton>
 
+#include "RoundButton.h"
 #include "CRedPackDlg.h"
-
-class RedPack
-{
-public:
-	explicit RedPack(const double& money);
-	~RedPack();
-
-private:
-	int id;
-	double max;
-	double surplus;
-};
+#include "RedPack.h"
 
 class CRedPackWidget : public QWidget
 {
@@ -35,18 +24,16 @@ public:
 private slots:
 	void onAddClicked();
 	void onRemoveClicked();
-	void onAddRedPack(const double money);
+	void onAddRedPack(double money);
 
 private:
 	QVBoxLayout* m_layout;
 	QTableView* m_table;
 	QStandardItemModel* m_model;
 
-	QPushButton* m_addBtn;
-	QPushButton* m_removeBtn;
+	RoundButton* m_addBtn;
+	RoundButton* m_removeBtn;
 
-	CRedPackDlg* m_dlg;
-
-	QVector<std::shared_ptr<RedPack>> m_vRedPack;
+	CRedPackDlg* m_dialog;
 };
 

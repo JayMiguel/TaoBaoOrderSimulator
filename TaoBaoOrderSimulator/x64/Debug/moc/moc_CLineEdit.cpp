@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'SimulatorWindow.h'
+** Meta object code from reading C++ file 'CLineEdit.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.14.2)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../src/ui/SimulatorWindow.h"
+#include "../../../Src/ui/common/CLineEdit.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'SimulatorWindow.h' doesn't include <QObject>."
+#error "The header file 'CLineEdit.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.14.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,25 +21,25 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_SimulatorWindow_t {
+struct qt_meta_stringdata_CLineEdit_t {
     QByteArrayData data[1];
-    char stringdata0[16];
+    char stringdata0[10];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_SimulatorWindow_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_CLineEdit_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_SimulatorWindow_t qt_meta_stringdata_SimulatorWindow = {
+static const qt_meta_stringdata_CLineEdit_t qt_meta_stringdata_CLineEdit = {
     {
-QT_MOC_LITERAL(0, 0, 15) // "SimulatorWindow"
+QT_MOC_LITERAL(0, 0, 9) // "CLineEdit"
 
     },
-    "SimulatorWindow"
+    "CLineEdit"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_SimulatorWindow[] = {
+static const uint qt_meta_data_CLineEdit[] = {
 
  // content:
        8,       // revision
@@ -55,7 +55,7 @@ static const uint qt_meta_data_SimulatorWindow[] = {
        0        // eod
 };
 
-void SimulatorWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void CLineEdit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -63,32 +63,32 @@ void SimulatorWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject SimulatorWindow::staticMetaObject = { {
-    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_SimulatorWindow.data,
-    qt_meta_data_SimulatorWindow,
+QT_INIT_METAOBJECT const QMetaObject CLineEdit::staticMetaObject = { {
+    QMetaObject::SuperData::link<QLineEdit::staticMetaObject>(),
+    qt_meta_stringdata_CLineEdit.data,
+    qt_meta_data_CLineEdit,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *SimulatorWindow::metaObject() const
+const QMetaObject *CLineEdit::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *SimulatorWindow::qt_metacast(const char *_clname)
+void *CLineEdit::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_SimulatorWindow.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLineEdit.stringdata0))
         return static_cast<void*>(this);
-    return QMainWindow::qt_metacast(_clname);
+    return QLineEdit::qt_metacast(_clname);
 }
 
-int SimulatorWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int CLineEdit::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QLineEdit::qt_metacall(_c, _id, _a);
     return _id;
 }
 QT_WARNING_POP

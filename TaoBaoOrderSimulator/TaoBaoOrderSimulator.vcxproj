@@ -14,13 +14,13 @@
     <ProjectGuid>{A05B176D-04CE-3F17-B50B-2901DD4D00BD}</ProjectGuid>
     <RootNamespace>TaoBaoOrderSimulator</RootNamespace>
     <Keyword>QtVS_v304</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.22621.0</WindowsTargetPlatformMinVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <OutputDirectory>release\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <CharacterSet>NotSet</CharacterSet>
@@ -29,7 +29,7 @@
     <PrimaryOutput>TaoBaoOrderSimulator</PrimaryOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <OutputDirectory>debug\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <CharacterSet>NotSet</CharacterSet>
@@ -57,7 +57,7 @@
     <IntDir>$(ProjectDir)$(Platform)\$(Configuration)</IntDir>
     <TargetName>TaoBaoOrderSimulator</TargetName>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
-    <IncludePath>$(ProjectDir)\src\ui;$(ProjectDir)\src\ui\component;$(ProjectDir)\src\ui\dialog;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\src\ui;$(ProjectDir)\src\ui\common;$(ProjectDir)\src\ui\component;$(ProjectDir)\src\ui\dialog;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)\$(Platform)\$(Configuration)</OutDir>
@@ -138,15 +138,15 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(ProjectDir)Src\ui;$(ProjectDir)Src\ui\common;$(ProjectDir)Src\ui\component;$(ProjectDir)Src\ui\dialog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(ProjectDir)Src\model;$(ProjectDir)Src\ui;$(ProjectDir)Src\ui\common;$(ProjectDir)Src\ui\component;$(ProjectDir)Src\ui\dialog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
-      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
       <LanguageStandard>Default</LanguageStandard>
-      <ObjectFileName>debug\</ObjectFileName>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
@@ -178,10 +178,11 @@
     </ResourceCompile>
     <QtMoc>
       <CompilerFlavor>msvc</CompilerFlavor>
-      <Include>./$(Configuration)/moc_predefs.h</Include>
-      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <Include>
+      </Include>
+      <ExecutionDescription>moc %(Identity)</ExecutionDescription>
       <DynamicSource>output</DynamicSource>
-      <QtMocDir>$(Platform)\$(Configuration)</QtMocDir>
+      <QtMocDir>$(IntDir)moc\</QtMocDir>
       <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
     </QtMoc>
     <QtUic>
@@ -191,6 +192,11 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\model\Order.cpp" />
+    <ClCompile Include="Src\ui\common\CLineEdit.cpp" />
+    <ClCompile Include="Src\ui\dialog\COrderDialog.cpp" />
+    <ClCompile Include="Src\ui\common\RoundButton.cpp" />
+    <ClCompile Include="Src\model\RedPack.cpp" />
     <ClCompile Include="Src\ui\common\CPushButton.cpp" />
     <ClCompile Include="src\ui\dialog\CRedPackDlg.cpp" />
     <ClCompile Include="src\ui\component\CDetailWidget.cpp" />
@@ -220,6 +226,13 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\ui\common\CPushButton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Src\ui\common\RoundButton.h" />
+    <QtMoc Include="Src\ui\dialog\COrderDialog.h" />
+    <QtMoc Include="Src\ui\common\CLineEdit.h" />
+    <ClInclude Include="Src\model\Order.h" />
+    <QtMoc Include="Src\model\RedPack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

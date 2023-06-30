@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'CPushButton.h'
+** Meta object code from reading C++ file 'RedPack.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.14.2)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../Src/ui/common/CPushButton.h"
+#include "../../../Src/model/RedPack.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'CPushButton.h' doesn't include <QObject>."
+#error "The header file 'RedPack.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.14.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,25 +21,25 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_CPushButton_t {
+struct qt_meta_stringdata_RedPack_t {
     QByteArrayData data[1];
-    char stringdata0[12];
+    char stringdata0[8];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_CPushButton_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_RedPack_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_CPushButton_t qt_meta_stringdata_CPushButton = {
+static const qt_meta_stringdata_RedPack_t qt_meta_stringdata_RedPack = {
     {
-QT_MOC_LITERAL(0, 0, 11) // "CPushButton"
+QT_MOC_LITERAL(0, 0, 7) // "RedPack"
 
     },
-    "CPushButton"
+    "RedPack"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_CPushButton[] = {
+static const uint qt_meta_data_RedPack[] = {
 
  // content:
        8,       // revision
@@ -55,7 +55,7 @@ static const uint qt_meta_data_CPushButton[] = {
        0        // eod
 };
 
-void CPushButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void RedPack::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -63,32 +63,32 @@ void CPushButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject CPushButton::staticMetaObject = { {
-    QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_CPushButton.data,
-    qt_meta_data_CPushButton,
+QT_INIT_METAOBJECT const QMetaObject RedPack::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_RedPack.data,
+    qt_meta_data_RedPack,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *CPushButton::metaObject() const
+const QMetaObject *RedPack::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *CPushButton::qt_metacast(const char *_clname)
+void *RedPack::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CPushButton.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_RedPack.stringdata0))
         return static_cast<void*>(this);
-    return QWidget::qt_metacast(_clname);
+    return QObject::qt_metacast(_clname);
 }
 
-int CPushButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int RedPack::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = QObject::qt_metacall(_c, _id, _a);
     return _id;
 }
 QT_WARNING_POP

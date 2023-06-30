@@ -19,6 +19,9 @@
     <Filter Include="Src\ui\common">
       <UniqueIdentifier>{d37f05f5-6f31-4bc6-99ad-40c750228463}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\model">
+      <UniqueIdentifier>{b8d2f8fa-a3a5-4f96-8bcf-d4a64a4d2963}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ui\component\COrderWidget.cpp">
@@ -42,6 +45,21 @@
     <ClCompile Include="Src\ui\common\CPushButton.cpp">
       <Filter>Src\ui\common</Filter>
     </ClCompile>
+    <ClCompile Include="Src\model\RedPack.cpp">
+      <Filter>Src\model</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ui\common\RoundButton.cpp">
+      <Filter>Src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ui\dialog\COrderDialog.cpp">
+      <Filter>Src\ui\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ui\common\CLineEdit.cpp">
+      <Filter>Src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\model\Order.cpp">
+      <Filter>Src\model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\ui\component\CRedPackWidget.h">
@@ -62,10 +80,27 @@
     <QtMoc Include="Src\ui\common\CPushButton.h">
       <Filter>Src\ui\common</Filter>
     </QtMoc>
+    <QtMoc Include="Src\ui\common\RoundButton.h">
+      <Filter>Src\ui\common</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\ui\dialog\COrderDialog.h">
+      <Filter>Src\ui\dialog</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\ui\common\CLineEdit.h">
+      <Filter>Src\ui\common</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\model\RedPack.h">
+      <Filter>Src\model</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Resource.qrc">
       <Filter>Resources</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\model\Order.h">
+      <Filter>Src\model</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

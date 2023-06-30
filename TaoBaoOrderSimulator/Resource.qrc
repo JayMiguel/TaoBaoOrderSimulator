@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
-        <file>Resources/duck.png</file>
+        <file>Resources/Disney.jpg</file>
+        <file>Resources/RedPackBackground.jpg</file>
+        <file>Resources/Duck.png</file>
     </qresource>
 </RCC>

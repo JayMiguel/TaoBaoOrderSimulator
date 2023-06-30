@@ -1,25 +1,26 @@
 #include "CPushButton.h"
-
-CPushButton::CPushButton(const QString& text, QWidget* parent) : QWidget(parent)
-{
-	this->setFixedSize(100, 300);
-	QLabel* imageLabel = new QLabel(this);
-	QLabel* textLabel = new QLabel(text);
-}
-
+#include <QDebug>
 CPushButton::CPushButton(const QString& imagePath, const QString& text, QWidget* parent): QWidget(parent)
 {
-	this->setFixedSize(100, 300);
+	this->setFixedSize(100, 100);
+	this->setStyleSheet("QWidget { background-color: blue; }");
 
-	this->m_imagePath = imagePath;
+	m_imagePath = imagePath;
 
-	QLabel* textLabel = new QLabel(text);
-	textLabel->setAlignment(Qt::AlignHCenter);
+	// 加载背景图片
+	QPixmap image(m_imagePath);
 
-	QVBoxLayout* layout = new QVBoxLayout;
-	layout->addWidget(textLabel);
+	// 创建用于显示背景图片的 QLabel
+	m_backgroundLabel = new QLabel(this);
+	m_backgroundLabel->setPixmap(image);
+	m_backgroundLabel->setScaledContents(true);
+	m_backgroundLabel->resize(this->size());
+	m_backgroundLabel->setStyleSheet("QLabel { background-color: none; }");
 
-	this->setLayout(layout);
+	m_textLabel = new QLabel(text, this);
+	m_textLabel->setStyleSheet("QLabel { background-color: none; }");
+	m_textLabel->setAlignment(Qt::AlignHCenter);
+	m_textLabel->move(35, 65);
 }
 
 CPushButton::~CPushButton()
@@ -27,8 +28,24 @@ CPushButton::~CPushButton()
 
 }
 
-void CPushButton::paintEvent(QPaintEvent* event)
+void CPushButton::mousePressEvent(QMouseEvent* event)
 {
-	QPainter painter(this);
-	painter.drawPixmap(rect(), QPixmap(m_imagePath), QRect());
+	this->move(this->x() + 5, this->y() + 5);
+	m_backgroundLabel->resize(90, 90);
+	QFont font;
+	font.setPointSize(9);
+	m_textLabel->setFont(font);
+	m_textLabel->move(30, 60);
+}
+
+void CPushButton::mouseReleaseEvent(QMouseEvent* event)
+{
+	this->move(this->x() - 5, this->y() - 5);
+	m_backgroundLabel->resize(100, 100);
+	QFont font;
+	font.setPointSize(12);
+	m_textLabel->setFont(font);
+	m_textLabel->move(35, 65);
+
+	emit clicked();
 }
