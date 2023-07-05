@@ -2,13 +2,16 @@
 
 CRedPackDlg::CRedPackDlg(QWidget* parent) : QDialog(parent)
 {
-	setWindowTitle(tr("新增红包"));
-	setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+	this->setWindowTitle(tr("新增红包"));
+	this->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
 
 	m_label = new QLabel(tr("红包总额："));
 
 	m_valueLine = new QLineEdit(this);
 	QDoubleValidator* validator = new QDoubleValidator(this);
+	m_valueLine->setFixedHeight(50);
+
 	m_valueLine->setValidator(validator);
 
 	m_okBtn = new QPushButton(tr("确定"), this);

@@ -2,7 +2,8 @@
 #pragma execution_character_set("utf-8")
 
 #include <QMainWindow>
-#include <QGridLayout>
+#include <QSplitter>
+#include <QStatusBar>
 
 #include "CDetailWidget.h"
 #include "CRedPackWidget.h"
@@ -16,7 +17,7 @@ public:
     ~SimulatorWindow();
 
 private:
-    QWidget* m_centralWidget;
+    QSplitter* m_splitter;
     QGridLayout* m_layout;
     CDetailWidget* m_detail;
     CRedPackWidget* m_redPack;

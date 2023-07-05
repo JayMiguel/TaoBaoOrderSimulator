@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{353181e8-c8a3-4fb2-b633-1373f8381fcc}</UniqueIdentifier>
     </Filter>
@@ -16,6 +12,9 @@
     </Filter>
     <Filter Include="src\ui\component">
       <UniqueIdentifier>{d39137d1-3559-4852-b69d-8d696b5c48b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui\common">
+      <UniqueIdentifier>{0a8e8e4d-4673-43e0-ad9c-0ca2b2c2ba56}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
