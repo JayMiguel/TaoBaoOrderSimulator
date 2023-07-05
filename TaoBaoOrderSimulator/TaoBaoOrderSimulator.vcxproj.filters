@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{9ad5a268-3c72-4af8-ac1c-764c7a9458df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{353181e8-c8a3-4fb2-b633-1373f8381fcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\ui">
+      <UniqueIdentifier>{76b0dce2-746f-41a8-b99e-2ce0e8ff2ba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\ui\dialog">
+      <UniqueIdentifier>{af4f1eaa-8c33-4eff-b449-3f24e8e1d9e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\ui\component">
+      <UniqueIdentifier>{d39137d1-3559-4852-b69d-8d696b5c48b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\ui\common">
+      <UniqueIdentifier>{d37f05f5-6f31-4bc6-99ad-40c750228463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\model">
+      <UniqueIdentifier>{b8d2f8fa-a3a5-4f96-8bcf-d4a64a4d2963}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ui\component\COrderWidget.cpp">
+      <Filter>Src\ui\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\component\CRedPackWidget.cpp">
+      <Filter>Src\ui\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\component\CDetailWidget.cpp">
+      <Filter>Src\ui\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\dialog\CRedPackDlg.cpp">
+      <Filter>Src\ui\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\SimulatorWindow.cpp">
+      <Filter>Src\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ui\common\CPushButton.cpp">
+      <Filter>Src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\model\RedPack.cpp">
+      <Filter>Src\model</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ui\common\RoundButton.cpp">
+      <Filter>Src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ui\dialog\COrderDialog.cpp">
+      <Filter>Src\ui\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ui\common\CLineEdit.cpp">
+      <Filter>Src\ui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\model\Order.cpp">
+      <Filter>Src\model</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\ui\component\CRedPackWidget.h">
+      <Filter>Src\ui\component</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\component\CDetailWidget.h">
+      <Filter>Src\ui\component</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\component\COrderWidget.h">
+      <Filter>Src\ui\component</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\dialog\CRedPackDlg.h">
+      <Filter>Src\ui\dialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\SimulatorWindow.h">
+      <Filter>Src\ui</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\ui\common\CPushButton.h">
+      <Filter>Src\ui\common</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\ui\common\RoundButton.h">
+      <Filter>Src\ui\common</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\ui\dialog\COrderDialog.h">
+      <Filter>Src\ui\dialog</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\ui\common\CLineEdit.h">
+      <Filter>Src\ui\common</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\model\RedPack.h">
+      <Filter>Src\model</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Resource.qrc">
+      <Filter>Resources</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\model\Order.h">
+      <Filter>Src\model</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

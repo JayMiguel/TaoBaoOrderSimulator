@@ -3,10 +3,10 @@
 #include <QDialog>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QLineEdit>
-#include <QDoubleValidator>
-#include <QPushButton>
 #include <QMessageBox>
+
+#include "CLineEdit.h"
+#include "CPushButton.h"
 
 class CRedPackDlg : public QDialog
 {
@@ -16,7 +16,7 @@ public:
 	~CRedPackDlg();
 	
 signals:
-	void addRedPack(const double);
+	void addRedPack(double total);
 
 public slots:
 	int exec();
@@ -27,7 +27,7 @@ private slots:
 private:
 	QHBoxLayout* m_layout;
 	QLabel* m_label;
-	QLineEdit* m_valueLine;
-	QPushButton* m_okBtn;
+	CLineEdit* m_valueLine;
+	CPushButton* m_okBtn;
 };
 
